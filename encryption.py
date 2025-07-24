@@ -1,7 +1,7 @@
 import string
 
 PLAIN = "abcdefghijklmnopqrstuvwxyz"
-CYPHER = "/.,mnbvcxz\';lkjhgfdsa][po"
+CYPHER = "/.,mnbvcxz';lkjhgfdsa][poi"
 
 enc_map = {p: c for p , c in zip(PLAIN, CYPHER)}
 dec_map = {c: p for p, c in zip(PLAIN,CYPHER)}
@@ -10,10 +10,10 @@ def translate(text, mapping):
     out = []
     for ch in text:
         if ch.isalpha():
-            is_upper = ch.isupper()
-            base = ch.upper()
-            mapped = mapping.get(base, base)
-            out.append(mapped if is_upper else mapped.lower())
+            is_lower = ch.islower()
+            base = ch.lower()
+            mapped = mapping[ch.lower()]
+            out.append(mapped if is_lower else mapped.upper())
         else:
             out.append(ch)
     return "".join(out)
@@ -47,10 +47,6 @@ while True:
         print("-" * 40)
 
 
-"""
-print("For input (encryption) type 'i', for output (decryption), type 'o' ")
-response = input()
-if response == 'i':
-    print("Enter your text to be encrypted")
-    input = input()
-"""
+
+
+
