@@ -9,7 +9,7 @@ dec_map = {c: p for p, c in zip(PLAIN,CYPHER)}
 def translate(text, mapping):
     out = []
     for ch in text:
-        if ch.isalpha():
+        if ch.isalpha() or ch == '/' or ch == '.' or ch == ',' or ch == "'" or ch == '[' or ch == ']' or ch == ';':
             is_lower = ch.islower()
             base = ch.lower()
             mapped = mapping[ch.lower()]
