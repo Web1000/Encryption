@@ -37,7 +37,7 @@ while True:
         print("Goodbye!")
         break
     elif choice == 'e':
-        msg = input("Enter the message to encrypt: ")
+        msg = input("Enter the message to encrypt (exclude punctuation): ")
         print("Encrypted:", encrypt(msg))
     elif choice == 'd':
         msg = input("Enter the message to decrypt: ")
